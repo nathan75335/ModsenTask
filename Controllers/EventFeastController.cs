@@ -60,6 +60,7 @@ namespace TaskModsen.Controllers
                     var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                     var token = new JwtSecurityToken(
                         issuer,
+                        claims,
                         audience,
                         expires:DateTime.Now.AddMinutes(28),
                         signingCredentials:signIn
